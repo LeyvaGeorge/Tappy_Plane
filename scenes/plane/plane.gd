@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+class_name Tappy
+
+
 const GRAVITY: float = 1000.0
 const POWER: float = -350.0
 
@@ -32,3 +35,4 @@ func fly()->void:
 func die()-> void:
 	anim_sprite.stop()
 	set_physics_process(false)
+	SignalManager.on_plane_died.emit()
