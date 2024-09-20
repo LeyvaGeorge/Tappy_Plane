@@ -1,10 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7joh1gpprkv2"]
+[gd_scene load_steps=10 format=3 uid="uid://b7joh1gpprkv2"]
 
 [ext_resource type="Texture2D" uid="uid://cxylhq2deo57w" path="res://assets/background/sky.png" id="1_srj88"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_yosm2"]
 [ext_resource type="LabelSettings" uid="uid://c7tf1ojk14yks" path="res://assets/LG_red_72.tres" id="2_xxu3j"]
 [ext_resource type="LabelSettings" uid="uid://dkr4urt5wbigw" path="res://assets/LG_white_48.tres" id="3_s6uuh"]
 [ext_resource type="LabelSettings" uid="uid://do3x0rksmffgu" path="res://assets/LG_red_24.tres" id="4_0w2m4"]
 [ext_resource type="AudioStream" uid="uid://dsmta55iksn0a" path="res://assets/audio/bgm_menu.mp3" id="5_nrn6e"]
+
+[sub_resource type="Animation" id="Animation_oegkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/SpaceLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_7ubtp"]
 resource_name = "flash"
@@ -23,21 +39,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_oegkf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/SpaceLabel:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qu3qr"]
 _data = {
 "RESET": SubResource("Animation_oegkf"),
@@ -51,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yosm2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
