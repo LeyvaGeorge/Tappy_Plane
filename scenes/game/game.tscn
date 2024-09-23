@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ghsd4lpvr6ox"]
+[gd_scene load_steps=7 format=3 uid="uid://ghsd4lpvr6ox"]
 
 [ext_resource type="Texture2D" uid="uid://xhtcbcfuf7lh" path="res://assets/background/rocks_2.png" id="1_adlra"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_mkw1j"]
 [ext_resource type="PackedScene" uid="uid://cd3ixh4bu1s0s" path="res://scenes/plane/plane.tscn" id="2_batwf"]
+[ext_resource type="PackedScene" uid="uid://c8d511wge1htv" path="res://scenes/hud/hud.tscn" id="3_iit8w"]
 [ext_resource type="PackedScene" uid="uid://ckm187hnd11nh" path="res://scenes/barrier/barrier.tscn" id="3_xe2qm"]
 [ext_resource type="PackedScene" uid="uid://d23q8mp7iqdhh" path="res://scenes/game_over_ui/game_over_ui.tscn" id="5_0ysdc"]
 
@@ -12,6 +13,8 @@ script = ExtResource("1_mkw1j")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOverUi" parent="CanvasLayer" instance=ExtResource("5_0ysdc")]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_iit8w")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(280, 396)
