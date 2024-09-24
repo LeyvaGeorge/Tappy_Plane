@@ -26,6 +26,7 @@ func _on_screen_exited() -> void:
 
 
 func _on_pipe_body_entered(body: Node2D) -> void:
+	print("Pipe ", body)
 	if body is Tappy:
 		body.die()
 	#if body.is_in_group(GameManager.GROUP_PLANE) == true:
